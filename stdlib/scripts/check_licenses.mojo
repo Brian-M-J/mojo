@@ -35,7 +35,8 @@ def main():
             # this is the current file
             continue
         file_path = Path(target_paths[i])
-        if not file_path.read_text().startswith(LICENSE):
+        var text: String = file_path.read_text()
+        if not text.as_string_slice().startswith(LICENSE):
             files_without_license.append(file_path)
 
     if len(files_without_license) > 0:
